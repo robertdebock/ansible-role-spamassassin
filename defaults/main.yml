@@ -1,0 +1,4 @@
+---
+# defaults file for spamassassin
+spamassassin_group: spamd
+spamassassin_user: spamd
