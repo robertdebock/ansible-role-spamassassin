@@ -9,14 +9,14 @@
       | default(spamassassin_packages[ansible_distribution]
       | default(spamassassin_packages['default'] )) }}"
 
-- name: start and enable software
-  service:
-    name: "{{ item }}"
-    state: started
-    enabled: yes
-  with_items:
-    - "{{ spamassassin_services[ansible_distribution ~ '-' ~ ansible_distribution_major_version]
-      | default(spamassassin_services[ansible_distribution]
-      | default(spamassassin_services['default'] )) }}"
-  when:
-    - ansible_virtualization_type != "docker"
+- name: create group
+  group:
+    name: "{{ spamassassin_group}}"
+    system: yes
+
+- name: create user
+  user:
+    name: "{{ spamassassin_user }}"
+    group: "{{ spamassassin_group }}"
+    comment: Spamassassin user
+    system: yes
