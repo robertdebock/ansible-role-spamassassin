@@ -3,7 +3,3 @@
 spamassassin_packages:
   default:
     - spamassassin
-
-spamassassin_services:
-  default:
-    - spamassassin
