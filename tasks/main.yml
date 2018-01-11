@@ -32,6 +32,14 @@
     src: templates/spamassassin.j2
     dest: /etc/logrotate.d/spamassassin
 
+- name: configure software
+  copy:
+    src: files/spamassassin
+    dest: /etc/default/spamassassin
+  when:
+    - ansible_distribution == "Ubuntu"
+    - ansible_distribution_release == "trusty"
+
 - name: start and enable software
   service:
     name: "{{ item }}"

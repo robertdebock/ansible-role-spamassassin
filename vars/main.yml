@@ -6,7 +6,5 @@ spamassassin_packages:
 
 spamassassin_service:
   default: spamassassin
-  CentOS: spamassassin
   openSUSE Leap: spamd
   Alpine: spamd
-  Fedora: spamd
