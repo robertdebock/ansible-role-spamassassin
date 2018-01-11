@@ -3,3 +3,10 @@
 spamassassin_packages:
   default:
     - spamassassin
+
+spamassassin_service:
+  default: spamassassin
+  CentOS: spamassassin
+  openSUSE Leap: spamd
+  Alpine: spamd
+  Fedora: spamd
