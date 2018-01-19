@@ -8,8 +8,6 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: spamassassin-archlinux
-    image: base/archlinux
   - name: spamassassin-alpine-3.6
     image: alpine:3.6
   - name: spamassassin-alpine-3.7
