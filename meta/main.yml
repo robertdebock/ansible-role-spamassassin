@@ -41,4 +41,4 @@ galaxy_info:
     - Ubuntu
 
 dependencies:
-  - robertdebock.rsyslog
+  - role: robertdebock.rsyslog
