@@ -25,7 +25,8 @@
   template:
     src: templates/spamassassin.conf.j2
     dest: /etc/rsyslog.d/spamassassin.conf
-  notify: restart rsyslog
+  notify:
+    - restart rsyslog
 
 - name: configure logrotate
   template:
