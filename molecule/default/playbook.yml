@@ -5,4 +5,6 @@
   strategy: free
 
   roles:
+    - role: robertdebock.bootstrap
+    - role: robertdebock.rsyslog
     - role: ansible-role-spamassassin
