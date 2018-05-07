@@ -35,7 +35,7 @@
 
 - name: configure software
   copy:
-    src: files/spamassassin
+    src: spamassassin
     dest: /etc/default/spamassassin
   when:
     - ansible_distribution == "Ubuntu"
