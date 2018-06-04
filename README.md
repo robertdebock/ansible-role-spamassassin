@@ -25,8 +25,8 @@ See defaults/main.yml
 Dependencies
 ------------
 
-- robertdebock.bootstrap
-- robertdebock.rsyslog
+- [robertdebock.bootstrap](https://travis-ci.org/robertdebock/ansible-role-bootstrap)
+- [robertdebock.rsyslog](https://travis-ci.org/robertdebock/ansible-role-rsyslog)
 
 Download the dependencies by issuing this command:
 ```
