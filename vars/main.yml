@@ -7,4 +7,5 @@ spamassassin_packages:
 spamassassin_service:
   default: spamassassin
   openSUSE Leap: spamd
+  openSUSE Tumbleweed: spamd
   Alpine: spamd
