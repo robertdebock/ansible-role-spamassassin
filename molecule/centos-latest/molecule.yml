@@ -8,14 +8,14 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: spamassassin-debian-buster
-    image: debian:buster
+  - name: spamassassin-centos-latest
+    image: centos:latest
 provisioner:
   name: ansible
   lint:
     name: ansible-lint
 scenario:
-  name: debian-buster
+  name: centos-latest
 verifier:
   name: goss
   lint:

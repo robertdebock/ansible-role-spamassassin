@@ -8,14 +8,14 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: spamassassin-debian-stretch
-    image: debian:stretch
+  - name: spamassassin-fedora-latest
+    image: fedora:latest
 provisioner:
   name: ansible
   lint:
     name: ansible-lint
 scenario:
-  name: debian-stretch
+  name: fedora-latest
 verifier:
   name: goss
   lint:
