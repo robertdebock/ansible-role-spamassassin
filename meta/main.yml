@@ -37,12 +37,12 @@ galaxy_info:
     - spamassassin
     - installer
     - package
-    - Alpine
-    - CentOS
-    - Debian
-    - Fedora
-    - RHEL
-    - Ubuntu
+    - alpine
+    - centos
+    - debian
+    - fedora
+    - rhel
+    - ubuntu
 
 dependencies:
   - role: robertdebock.rsyslog
