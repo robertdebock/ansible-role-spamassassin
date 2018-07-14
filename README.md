@@ -20,7 +20,11 @@ Access to a repository containing packages, likely on the internet.
 Role Variables
 --------------
 
-See defaults/main.yml
+See defaults/main.yml:
+
+- spamassassin_group: The group to run under.
+- spamassassin_user: The user to run under.
+
 
 Dependencies
 ------------
