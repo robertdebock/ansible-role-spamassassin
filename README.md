@@ -3,7 +3,7 @@ spamassassin
 
 [![Build Status](https://travis-ci.org/robertdebock/ansible-role-spamassassin.svg?branch=master)](https://travis-ci.org/robertdebock/ansible-role-spamassassin)
 
-Provides Postfix for your system.
+Provides Spamassassin for your system.
 
 Context
 -------
