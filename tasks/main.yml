@@ -14,17 +14,20 @@
 - name: install software
   package:
     name: "{{ item }}"
+    state: present
   with_items:
     - "{{ spamassassin_packages }}"
 
 - name: create group
   group:
     name: "{{ spamassassin_group }}"
+    state: present
     system: yes
 
 - name: create user
   user:
     name: "{{ spamassassin_user }}"
+    state: present
     group: "{{ spamassassin_group }}"
     comment: Spamassassin user
     system: yes
