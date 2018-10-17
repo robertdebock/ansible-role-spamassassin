@@ -1,22 +1,9 @@
 ---
 # tasks file for spamassassin
-- name: load default variables
-  include_vars:
-    file: default.yml
-
-- name: load os-specific variables
-  include_vars: "{{ item }}"
-  with_first_found:
-    - "{{ ansible_distribution }}-{{ ansible_distribution_major_version }}.yml"
-    - "{{ ansible_distribution }}.yml"
-    - default.yml
-
-- name: install software
+- name: install spamassassin
   package:
-    name: "{{ item }}"
-    state: present
-  with_items:
-    - "{{ spamassassin_packages }}"
+    name: "{{ spamassassin_packages }}"
+    state: "{{ spamassassin_package_state }}"
 
 - name: create group
   group:
@@ -52,12 +39,11 @@
     - ansible_distribution == "Ubuntu"
     - ansible_distribution_release == "trusty"
 
-- name: start and enable software
+- name: start and enable spamassassin
   service:
-    name: "{{ item }}"
+    name: "{{ spamassassin_service[ansible_distribution]
+          | default(spamassassin_service['default']) }}"
     state: started
     enabled: yes
-  with_items:
-    - "{{ spamassassin_service }}"
   when:
     - ansible_virtualization_type != "docker"

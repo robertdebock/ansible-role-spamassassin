@@ -1,0 +1,50 @@
+---
+dependency:
+  name: galaxy
+  options:
+    role-file: requirements.yml
+driver:
+  name: docker
+lint:
+  name: yamllint
+platforms:
+  - name: spamassassin-alpine-edge
+    image: alpine:edge
+    command: sh -c "while true ; do sleep 1 ; done"
+  - name: spamassassin-alpine-latest
+    image: alpine:latest
+    command: sh -c "while true ; do sleep 1 ; done"
+  - name: spamassassin-archlinux
+    image: base/archlinux
+  - name: spamassassin-centos-6
+    image: centos:6
+  - name: spamassassin-centos-latest
+    image: centos:latest
+  - name: spamassassin-debian-latest
+    image: debian:latest
+  - name: spamassassin-debian-stable
+    image: debian:stable
+  - name: spamassassin-debian-unstable
+    image: debian:unstable
+  - name: spamassassin-fedora-latest
+    image: fedora:latest
+  - name: spamassassin-fedora-rawhide
+    image: fedora:rawhide
+  - name: spamassassin-opensuse-leap
+    image: opensuse:leap
+  - name: spamassassin-opensuse-tumbleweed
+    image: opensuse:tumbleweed
+  - name: spamassassin-ubuntu-artful
+    image: ubuntu:artful
+  - name: spamassassin-ubuntu-devel
+    image: ubuntu:devel
+provisioner:
+  name: ansible
+  lint:
+    name: ansible-lint
+scenario:
+  name: default
+verifier:
+  name: goss
+  lint:
+    name: yamllint

@@ -1,3 +1,0 @@
----
-# vars file for spamassassin
-spamassassin_service: spamd
