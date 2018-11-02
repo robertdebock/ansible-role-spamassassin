@@ -38,11 +38,12 @@
   when:
     - ansible_distribution == "Ubuntu"
     - ansible_distribution_release == "trusty"
+  notify:
+    - restart spamassassin
 
 - name: start and enable spamassassin
   service:
-    name: "{{ spamassassin_service[ansible_distribution]
-          | default(spamassassin_service['default']) }}"
+    name: "{{ spamassassin_service }}"
     state: started
     enabled: yes
   when:

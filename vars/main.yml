@@ -3,8 +3,10 @@
 spamassassin_packages:
   - spamassassin
 
-spamassassin_service:
+_spamassassin_service:
   default: spamassassin
   Alpine: spamd
   openSUSE Leap: spamd
   openSUSE Tumbleweed: spamd
+
+spamassassin_service: "{{ _spamassassin_service[ansible_distribution] | default(_spamassassin_service['default']) }}"

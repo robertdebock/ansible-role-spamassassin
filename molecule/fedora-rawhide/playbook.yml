@@ -4,6 +4,6 @@
   gather_facts: false
 
   roles:
-    - role: robertdebock.bootstrap
-    - role: robertdebock.rsyslog
-    - role: ansible-role-spamassassin
+    - robertdebock.bootstrap
+    - robertdebock.rsyslog
+    - ansible-role-spamassassin
