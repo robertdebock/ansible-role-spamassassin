@@ -1,1 +1,0 @@
-Provides Spamassassin, a mail spam assessment, for your system.

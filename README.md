@@ -3,8 +3,7 @@ spamassassin
 
 [![Build Status](https://travis-ci.org/robertdebock/ansible-role-spamassassin.svg?branch=master)](https://travis-ci.org/robertdebock/ansible-role-spamassassin)
 
-Provides Spamassassin, a mail spam assessment, for your system.
-
+The purpose of this role is to install and configure spamassassin on your system.
 
 Example Playbook
 ----------------
