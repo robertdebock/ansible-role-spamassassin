@@ -18,6 +18,10 @@ provisioner:
     group_vars:
       all:
         spamassassin_ignore_docker: no
+        rsyslog_ignore_docker: no
+  config_options:
+    defaults:
+      callback_plugins: /usr/lib/python2.7/site-packages/ara/plugins/callbacks
   lint:
     name: ansible-lint
 scenario:
