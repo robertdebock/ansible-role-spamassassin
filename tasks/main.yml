@@ -4,6 +4,9 @@
   package:
     name: "{{ spamassassin_packages }}"
     state: "{{ spamassassin_package_state }}"
+  register: spamassassin_install_spamassassin
+  until: spamassassin_install_spamassassin
+  retries: 3
 
 - name: create group
   group:
