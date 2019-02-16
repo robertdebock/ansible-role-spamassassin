@@ -34,8 +34,10 @@ platforms:
     image: opensuse:leap
   - name: spamassassin-opensuse-tumbleweed
     image: opensuse:tumbleweed
-  - name: spamassassin-ubuntu-artful
-    image: ubuntu:artful
+  - name: spamassassin-ubuntu-latest
+    image: ubuntu:latest
+  - name: spamassassin-ubuntu-rolling
+    image: ubuntu:rolling
   - name: spamassassin-ubuntu-devel
     image: ubuntu:devel
   - name: spamassassin-ubuntu-latest
