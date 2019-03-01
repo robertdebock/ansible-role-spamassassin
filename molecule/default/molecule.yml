@@ -32,8 +32,6 @@ platforms:
     image: fedora:rawhide
   - name: spamassassin-opensuse-leap
     image: opensuse:leap
-  - name: spamassassin-opensuse-tumbleweed
-    image: opensuse:tumbleweed
   - name: spamassassin-ubuntu-latest
     image: ubuntu:latest
   - name: spamassassin-ubuntu-rolling
