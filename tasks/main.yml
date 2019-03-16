@@ -3,7 +3,7 @@
 - name: install spamassassin
   package:
     name: "{{ spamassassin_packages }}"
-    state: "{{ spamassassin_package_state }}"
+    state: present
   register: spamassassin_install_spamassassin
   until: spamassassin_install_spamassassin
   retries: 3
@@ -50,4 +50,4 @@
     state: started
     enabled: yes
   when:
-    - ansible_virtualization_type != "docker" or spamassassin_ignore_docker
+    - ansible_virtualization_type != "docker"

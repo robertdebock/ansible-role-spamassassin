@@ -3,28 +3,21 @@ dependency:
   name: galaxy
   options:
     role-file: requirements.yml
-driver:
-  name: docker
 lint:
   name: yamllint
+driver:
+  name: docker
 platforms:
   - name: spamassassin-fedora-rawhide
     image: fedora:rawhide
+    pre_build_image: yes
     registry:
       url: registry.fedoraproject.org
 provisioner:
   name: ansible
-  inventory:
-    host_vars:
-      spamassassin-fedora-rawhide:
-        ansible_python_interpreter: /usr/bin/python3
-    group_vars:
-      all:
-        spamassassin_ignore_docker: no
-        rsyslog_ignore_docker: no
-  config_options:
-    defaults:
-      callback_plugins: /usr/lib/python2.7/site-packages/ara/plugins/callbacks
+  playbooks:
+    prepare: ../resources/prepare.yml
+    converge: ../resources/playbook.yml
   lint:
     name: ansible-lint
 scenario:
