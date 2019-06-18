@@ -5,7 +5,7 @@
     name: "{{ spamassassin_packages }}"
     state: present
   register: spamassassin_install_spamassassin
-  until: spamassassin_install_spamassassin
+  until: spamassassin_install_spamassassin is succeeded
   retries: 3
 
 - name: create group
