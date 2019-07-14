@@ -25,9 +25,6 @@ platforms:
   - name: spamassassin-centos-latest
     image: centos:latest
     pre_build_image: yes
-  - name: spamassassin-debian-latest
-    image: debian:latest
-    pre_build_image: yes
   - name: spamassassin-debian-stable
     image: debian:stable
     pre_build_image: yes
