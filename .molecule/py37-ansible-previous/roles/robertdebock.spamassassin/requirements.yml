@@ -1,0 +1,5 @@
+---
+- robertdebock.bootstrap
+- robertdebock.core_dependencies
+- robertdebock.spamassassin
+- robertdebock.rsyslog

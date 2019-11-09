@@ -1,8 +1,8 @@
 ---
 galaxy_info:
   author: Robert de Bock
-  role_name: spamassassin
-  description: Install and configure spamassassin on your system.
+  role_name: rsyslog
+  description: Install and configure rsyslog on your system.
   license: Apache-2.0
   company: none
   min_ansible_version: 2.6
@@ -10,7 +10,7 @@ galaxy_info:
   platforms:
     - name: Amazon
       versions:
-        - Candidate
+        - all
     - name: Alpine
       versions:
         - all
@@ -33,7 +33,7 @@ galaxy_info:
         - bionic
 
   galaxy_tags:
-    - spamassassin
+    - rsyslog
     - installer
     - package
     - alpine
@@ -43,5 +43,4 @@ galaxy_info:
     - rhel
     - ubuntu
 
-dependencies:
-  - robertdebock.rsyslog
+dependencies: []

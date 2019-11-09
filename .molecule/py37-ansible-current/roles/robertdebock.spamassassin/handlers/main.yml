@@ -1,0 +1,6 @@
+---
+# handlers file for spamassassin
+- name: restart spamassassin
+  service:
+    name: "{{ spamassassin_service }}"
+    state: restarted

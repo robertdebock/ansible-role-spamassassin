@@ -1,0 +1,51 @@
+---
+# tasks file for spamassassin
+- name: install spamassassin
+  package:
+    name: "{{ spamassassin_packages }}"
+    state: present
+  register: spamassassin_install_spamassassin
+  until: spamassassin_install_spamassassin is succeeded
+  retries: 3
+
+- name: create group
+  group:
+    name: "{{ spamassassin_group }}"
+    state: present
+    system: yes
+
+- name: create user
+  user:
+    name: "{{ spamassassin_user }}"
+    state: present
+    group: "{{ spamassassin_group }}"
+    comment: Spamassassin user
+    system: yes
+
+- name: configure rsyslog
+  template:
+    src: spamassassin.conf.j2
+    dest: /etc/rsyslog.d/spamassassin.conf
+  notify:
+    - restart rsyslog
+
+- name: configure logrotate
+  template:
+    src: spamassassin.j2
+    dest: /etc/logrotate.d/spamassassin
+
+- name: configure software
+  copy:
+    src: spamassassin
+    dest: /etc/default/spamassassin
+  when:
+    - ansible_distribution == "Ubuntu"
+    - ansible_distribution_release == "trusty"
+  notify:
+    - restart spamassassin
+
+- name: start and enable spamassassin
+  service:
+    name: "{{ spamassassin_service }}"
+    state: started
+    enabled: yes

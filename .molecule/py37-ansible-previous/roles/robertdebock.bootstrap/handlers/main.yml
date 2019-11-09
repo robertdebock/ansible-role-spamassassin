@@ -1,0 +1,10 @@
+---
+# handlers file for bootstrap
+- name: gather facts
+  setup:
+  become: no
+
+- name: add community repository for apk
+  lineinfile:
+    path: /etc/apk/repositories
+    line: "{{ bootstrap_alpine_community_repo }}"

@@ -1,0 +1,44 @@
+---
+# vars file for bootstrap
+bootstrap_connect: {}
+bootstrap_remote_user: "{{ (ansible_user | default(omit, true)) if bootstrap_connect is succeeded else bootstrap_user }}"
+
+# A string for each distribution and version of packages to install.
+# Because this is a bootstrap role, there are no facts. The file
+# `tasks/register.yml` discovers what distribution and version ansible
+# is running against.
+_bootstrap_packages:
+  Amazon: python sudo
+  Alpine: python3 sudo
+  Archlinux: python3 sudo
+  CentOS Linux-7: python3 sudo
+  CentOS-7: python3 sudo
+  CentOS: python3 sudo
+  CentOS Linux: python3 sudo
+  Gentoo: python sudo gentoolkit
+  Fedora: python3 sudo
+  Debian-8: python sudo gnupg
+  Debian-9: python sudo gnupg
+  Debian: python3 sudo gnupg python3-apt
+  Kali: python3 sudo gnupg
+  Kali GNU/Linux: python3 sudo gnupg
+  OracleLinux: python3 sudo
+  openSUSE: python python-xml sudo
+  openSUSE Leap: python python-xml sudo
+  openSUSE Tumbleweed: python python-xml sudo
+  RedHat: python3 sudo
+  RedHat-7: python sudo
+  Red Hat Enterprise Linux Server-7: python sudo
+  Red Hat Enterprise Linux Server: python3 sudo
+  Red Hat Enterprise Linux-7: python sudo
+  Red Hat Enterprise Linux: python3 sudo
+  Ubuntu: python3 sudo gnupg
+
+# Map the right set of package based on values found in `tasks/register.yml`.
+bootstrap_packages: "{{ _bootstrap_packages[bootstrap_distribution ~ '-' ~ bootstrap_distribution_major_version] | default(_bootstrap_packages[bootstrap_distribution] ) }}"
+
+# Map the right set of packages, based on gathered facts.
+bootstrap_facts_packages: "{{ _bootstrap_packages[ansible_distribution ~ '-' ~ ansible_distribution_major_version] | default(_bootstrap_packages[ansible_distribution]) }}"
+
+# Save this hideously long command here.
+bootstrap_emerge_command: equery l {{ bootstrap_packages }} || (emaint -a sync ; emerge -qkv {{ bootstrap_packages }} ; echo "changed")
