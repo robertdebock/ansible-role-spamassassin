@@ -3,7 +3,7 @@
 ---
 all:
   hosts:
-    spamassassin-fedora-latestpy37-ansible-current: &id001
+    spamassassin-ubuntu-latestpy37-ansible-current: &id001
       ansible_connection: docker
   vars:
     molecule_ephemeral_directory: '{{ lookup(''env'', ''MOLECULE_EPHEMERAL_DIRECTORY'')
@@ -17,5 +17,5 @@ all:
     molecule_yml: '{{ lookup(''file'', molecule_file) | molecule_from_yaml }}'
 ungrouped:
   hosts:
-    spamassassin-fedora-latestpy37-ansible-current: *id001
+    spamassassin-ubuntu-latestpy37-ansible-current: *id001
   vars: {}
