@@ -83,7 +83,6 @@ This role has been tested on these [container images](https://hub.docker.com/):
 
 |container|tag|allow_failures|
 |---------|---|--------------|
-|amazonlinux|1|no|
 |amazonlinux|latest|no|
 |alpine|latest|no|
 |alpine|edge|yes|
@@ -110,6 +109,7 @@ Some variarations of the build matrix do not work. These are the variations and 
 | variation                 | reason                 |
 |---------------------------|------------------------|
 | Archlinux | target not found: rsyslog |
+| amazonlinux:1 | /etc/init.d/spamassassin: line 17: /etc/sysconfig/network: No such file or directory |
 
 
 
