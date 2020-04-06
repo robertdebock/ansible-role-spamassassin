@@ -29,9 +29,9 @@ The machine may need to be prepared using `molecule/resources/prepare.yml`:
   become: yes
 
   roles:
-    - robertdebock.bootstrap
-    - robertdebock.core_dependencies
-    - robertdebock.rsyslog
+    - role: robertdebock.bootstrap
+    - role: robertdebock.core_dependencies
+    - role: robertdebock.rsyslog
 ```
 
 For verification `molecule/resources/verify.yml` run after the role has been applied.
