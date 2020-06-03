@@ -1,5 +1,7 @@
 ---
 - robertdebock.bootstrap
+- robertdebock.cron
 - robertdebock.core_dependencies
+- robertdebock.logrotate
 - robertdebock.spamassassin
 - robertdebock.rsyslog
