@@ -45,6 +45,14 @@ For verification `molecule/resources/verify.yml` run after the role has been app
   tasks:
     - name: check if connection still works
       ping:
+
+    - name: see if logrotate still works
+      command: logrotate /etc/logrotate.d/spamassassin
+
+    - name: see if rsyslog can be restarted
+      service:
+        name: rsyslog
+        state: restarted
 ```
 
 Also see a [full explanation and example](https://robertdebock.nl/how-to-use-these-roles.html) on how to use these roles.
