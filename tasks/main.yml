@@ -44,6 +44,14 @@
   notify:
     - restart spamassassin
 
+- name: set permission on /var/log/spamassassin
+  file:
+    path: /var/log/spamassassin
+    state: directory
+    owner: "{{ spamassassin_user }}"
+    group: "{{ spamassassin_group }}"
+    mode: 0640
+
 - name: start and enable spamassassin
   service:
     name: "{{ spamassassin_service }}"
