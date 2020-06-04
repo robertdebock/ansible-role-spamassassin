@@ -2,9 +2,9 @@
 
 Install and configure spamassassin on your system.
 
-|Travis|GitHub|Quality|Downloads|
-|------|------|-------|---------|
-|[![travis](https://travis-ci.com/robertdebock/ansible-role-spamassassin.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-spamassassin)|[![github](https://github.com/robertdebock/ansible-role-spamassassin/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-spamassassin/actions)|[![quality](https://img.shields.io/ansible/quality/23093)](https://galaxy.ansible.com/robertdebock/spamassassin)|[![downloads](https://img.shields.io/ansible/role/d/23093)](https://galaxy.ansible.com/robertdebock/spamassassin)|
+|Travis|GitHub|Quality|Downloads|Version|
+|------|------|-------|---------|-------|
+|[![travis](https://travis-ci.com/robertdebock/ansible-role-spamassassin.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-spamassassin)|[![github](https://github.com/robertdebock/ansible-role-spamassassin/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-spamassassin/actions)|[![quality](https://img.shields.io/ansible/quality/23093)](https://galaxy.ansible.com/robertdebock/spamassassin)|[![downloads](https://img.shields.io/ansible/role/d/23093)](https://galaxy.ansible.com/robertdebock/spamassassin)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-spamassassin.svg)](https://github.com/robertdebock/ansible-role-spamassassin/releases/)|
 
 ## [Example Playbook](#example-playbook)
 
@@ -81,11 +81,11 @@ The following roles can be installed to ensure all requirements are met, using `
 ```yaml
 ---
 - robertdebock.bootstrap
-- robertdebock.cron
 - robertdebock.core_dependencies
+- robertdebock.cron
 - robertdebock.logrotate
-- robertdebock.spamassassin
 - robertdebock.rsyslog
+- robertdebock.spamassassin
 
 ```
 
