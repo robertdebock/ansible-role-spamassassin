@@ -50,7 +50,7 @@
     state: directory
     owner: "{{ spamassassin_user }}"
     group: "{{ spamassassin_group }}"
-    mode: 0640
+    mode: "640"
 
 - name: start and enable spamassassin
   service:
