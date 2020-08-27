@@ -26,6 +26,7 @@
   template:
     src: spamassassin.conf.j2
     dest: /etc/rsyslog.d/spamassassin.conf
+    mode: "0644"
   notify:
     - restart rsyslog
 
@@ -33,11 +34,13 @@
   template:
     src: spamassassin.j2
     dest: /etc/logrotate.d/spamassassin
+    mode: "0644"
 
 - name: configure software
   copy:
     src: spamassassin
     dest: /etc/default/spamassassin
+    mode: "0644"
   when:
     - ansible_distribution == "Ubuntu"
     - ansible_distribution_release == "trusty"
