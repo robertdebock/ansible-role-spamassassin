@@ -36,7 +36,6 @@ galaxy_info:
     - spamassassin
     - installer
     - package
-    - centos
 
 dependencies:
   - robertdebock.rsyslog
