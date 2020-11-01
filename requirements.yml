@@ -1,7 +1,8 @@
 ---
-- robertdebock.bootstrap
-- robertdebock.core_dependencies
-- robertdebock.cron
-- robertdebock.logrotate
-- robertdebock.rsyslog
-- robertdebock.spamassassin
+roles:
+  - name: robertdebock.bootstrap
+  - name: robertdebock.core_dependencies
+  - name: robertdebock.cron
+  - name: robertdebock.logrotate
+  - name: robertdebock.rsyslog
+  - name: robertdebock.spamassassin
