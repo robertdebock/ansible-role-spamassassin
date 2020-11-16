@@ -3,12 +3,10 @@
   assert:
     that:
       - spamassassin_group is defined
-      - spamassassin_group | length > 0
     quiet: yes
 
 - name: test if spamassassin_user is set correctly
   assert:
     that:
       - spamassassin_user is defined
-      - spamassassin_user | length > 0
     quiet: yes
