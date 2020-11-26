@@ -1,4 +1,5 @@
 ---
+
 - name: test if spamassassin_group is set correctly
   assert:
     that:
