@@ -4,10 +4,12 @@
   assert:
     that:
       - spamassassin_group is defined
+      - spamassassin_group is string
     quiet: yes
 
 - name: test if spamassassin_user is set correctly
   assert:
     that:
       - spamassassin_user is defined
+      - spamassassin_user is string
     quiet: yes
