@@ -2,7 +2,7 @@
 # handlers file for spamassassin
 
 - name: restart spamassassin
-  service:
+  ansible.builtin.service:
     name: "{{ spamassassin_service }}"
     state: restarted
   when:
