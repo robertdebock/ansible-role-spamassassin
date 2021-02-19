@@ -7,18 +7,18 @@
   delegate_to: localhost
 
 - name: install spamassassin
-  package:
+  ansible.builtin.package:
     name: "{{ spamassassin_packages }}"
     state: present
 
 - name: create group
-  group:
+  ansible.builtin.group:
     name: "{{ spamassassin_group }}"
     state: present
     system: yes
 
 - name: create user
-  user:
+  ansible.builtin.user:
     name: "{{ spamassassin_user }}"
     state: present
     group: "{{ spamassassin_group }}"
@@ -26,7 +26,7 @@
     system: yes
 
 - name: configure rsyslog
-  template:
+  ansible.builtin.template:
     src: spamassassin.conf.j2
     dest: /etc/rsyslog.d/spamassassin.conf
     mode: "0644"
@@ -34,13 +34,13 @@
     - restart rsyslog
 
 - name: configure logrotate
-  template:
+  ansible.builtin.template:
     src: spamassassin.j2
     dest: /etc/logrotate.d/spamassassin
     mode: "0644"
 
 - name: configure software
-  copy:
+  ansible.builtin.copy:
     src: spamassassin
     dest: /etc/default/spamassassin
     mode: "0644"
@@ -51,7 +51,7 @@
     - restart spamassassin
 
 - name: set permission on /var/log/spamassassin
-  file:
+  ansible.builtin.file:
     path: /var/log/spamassassin
     state: directory
     owner: "{{ spamassassin_user }}"
@@ -59,7 +59,7 @@
     mode: "640"
 
 - name: start and enable spamassassin
-  service:
+  ansible.builtin.service:
     name: "{{ spamassassin_service }}"
     state: started
     enabled: yes

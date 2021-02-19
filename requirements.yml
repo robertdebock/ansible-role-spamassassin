@@ -6,3 +6,5 @@ roles:
   - name: robertdebock.logrotate
   - name: robertdebock.rsyslog
   - name: robertdebock.spamassassin
+collections:
+  - name: ansible.builtin
