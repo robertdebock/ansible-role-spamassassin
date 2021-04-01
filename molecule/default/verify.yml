@@ -6,12 +6,12 @@
 
   tasks:
     - name: check if connection still works
-      ping:
+      ansible.builtin.ping:
 
     - name: see if logrotate still works
       command: logrotate /etc/logrotate.d/spamassassin
 
     - name: see if rsyslog can be restarted
-      service:
+      ansible.builtin.service:
         name: rsyslog
         state: restarted
