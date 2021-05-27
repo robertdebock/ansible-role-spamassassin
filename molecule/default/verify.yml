@@ -9,7 +9,8 @@
       ansible.builtin.ping:
 
     - name: see if logrotate still works
-      command: logrotate /etc/logrotate.d/spamassassin
+      ansible.builtin.command:
+        cmd: logrotate /etc/logrotate.d/spamassassin
 
     - name: see if rsyslog can be restarted
       ansible.builtin.service:
