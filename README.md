@@ -33,6 +33,10 @@ The machine needs to be prepared in CI this is done using `molecule/default/prep
     - role: robertdebock.core_dependencies
     - role: robertdebock.cron
     - role: robertdebock.logrotate
+      logwatch_entries:
+        - name: spamassassin
+          path: /var/log/spamassassin
+          missingok: yes
     - role: robertdebock.rsyslog
 ```
 
