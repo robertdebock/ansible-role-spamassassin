@@ -10,4 +10,4 @@ _spamassassin_service:
   Suse: spamd
   Debian: spamassassin-maintenance
 
-spamassassin_service: "{{ _spamassassin_service[ansible_os_family] | default(_spamassassin_service['default'] ) }}"
+spamassassin_service: "{{ _spamassassin_service[ansible_os_family] | default(_spamassassin_service['default']) }}"
