@@ -5,14 +5,14 @@
   gather_facts: no
 
   tasks:
-    - name: check if connection still works
+    - name: Check if connection still works
       ansible.builtin.ping:
 
-    - name: see if logrotate still works
+    - name: See if logrotate still works
       ansible.builtin.command:
         cmd: logrotate /etc/logrotate.d/spamassassin
 
-    - name: see if rsyslog can be restarted
+    - name: See if rsyslog can be restarted
       ansible.builtin.service:
         name: rsyslog
         state: restarted
