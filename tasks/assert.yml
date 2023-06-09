@@ -5,6 +5,7 @@
     that:
       - spamassassin_group is defined
       - spamassassin_group is string
+      - spamassassin_group is not none
     quiet: yes
 
 - name: assert | Test if spamassassin_user is set correctly
@@ -12,4 +13,5 @@
     that:
       - spamassassin_user is defined
       - spamassassin_user is string
+      - spamassassin_user is not none
     quiet: yes
