@@ -5,4 +5,4 @@
 repository:
   description: Install and configure spamassassin on your system.
   homepage: https://robertdebock.nl/
-  topics: spamassassin, installer, package, ansible, molecule, tox, playbook
+  topics: spamassassin, installer, package, security, ansible, molecule, tox, playbook
