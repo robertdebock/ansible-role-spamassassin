@@ -1,4 +1,4 @@
-# Ansible role [spamassassin](#spamassassin)
+# [Ansible role spamassassin](#spamassassin)
 
 Install and configure spamassassin on your system.
 
