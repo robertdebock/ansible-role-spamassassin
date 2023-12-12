@@ -9,7 +9,7 @@
 
 - name: Install spamassassin
   ansible.builtin.package:
-    name: "{{ spamassassin_packages }}"
+    name: spamassassin
     state: present
 
 - name: Create group
