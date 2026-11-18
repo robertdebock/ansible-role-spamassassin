@@ -11,6 +11,13 @@ _spamassassin_service:
   Suse:
     name: spamd
     state: started
+  # Debian 13 and Ubuntu 24 (the OS family of Ubuntu is Debian, the major version 24) use `spamd`.
+  Debian-13:
+    name: spamd
+    state: started
+  Debian-24:
+    name: spamd
+    state: started
   Debian-12:
     # A timer would not be idempotent for starting, so omit the state, just enable it.
     name: spamassassin-maintenance
