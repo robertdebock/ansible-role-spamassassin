@@ -1,0 +1,17 @@
+digraph PhiloDilemma {
+  label = "Robert de Bock" ;
+  overlap=false
+  {
+    "spamassassin" [fillcolor=yellow style=filled penwidth=3]
+    "robertdebock.bootstrap" [fillcolor=green style=filled]
+    "robertdebock.core_dependencies" [fillcolor=green style=filled]
+    "robertdebock.cron" [fillcolor=green style=filled]
+    "robertdebock.logrotate" [fillcolor=green style=filled]
+    "robertdebock.rsyslog" [fillcolor=green style=filled]
+  }
+  "spamassassin" -> "robertdebock.bootstrap"
+  "spamassassin" -> "robertdebock.core_dependencies"
+  "spamassassin" -> "robertdebock.cron"
+  "spamassassin" -> "robertdebock.logrotate"
+  "spamassassin" -> "robertdebock.rsyslog"
+}
